@@ -141,7 +141,8 @@ defimpl Phoenix.HTML.FormData, for: Map do
             action: action,
             params: params || %{},
             hidden: hidden,
-            options: opts
+            options: opts,
+            errors: Keyword.get(form.errors, field, [])
           }
         ]
 
